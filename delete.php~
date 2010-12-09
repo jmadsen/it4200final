@@ -1,0 +1,10 @@
+<?php
+include("consdb.php");
+
+db_connect();
+
+mysql_query("delete from a4 where RegistrationID=".$_POST['delete'].";") or die(mysql_error());
+
+header("location: assign5.php");
+
+?>

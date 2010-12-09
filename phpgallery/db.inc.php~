@@ -1,0 +1,20 @@
+<?php
+$link = mysqli_connect('144.38.205.172', 'jmadsen', 'Jordan8323');
+if (!$link)
+{
+	echo 'Unable to connect to the database server.';
+	exit();
+}
+
+if (!mysqli_set_charset($link, 'utf8'))
+{
+	echo 'Unable to set database connection encoding.';
+	exit();
+}
+
+if (!mysqli_select_db($link, 'jmadsen'))
+{
+	echo 'Unable to locate the ktmadsenteam database.';
+	exit();
+}
+?>

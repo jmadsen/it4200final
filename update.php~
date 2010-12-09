@@ -1,0 +1,93 @@
+<?php
+include "header.php";
+include("sec.php");
+include "consdb.php";
+
+$id = $_POST['id'];
+
+db_connect();
+
+$query=mysql_query("select * from a4 where RegistrationID=".$id.";");
+
+while($row=mysql_fetch_array($query)){
+
+$fname = $row["fname"];
+
+$lname = $row["lname"];
+
+$cellPhone = $row["cellPhone"];
+
+$homePhone = $row["homePhone"];
+
+$email = $row["email"];
+
+}
+
+?>
+<table border=0>
+
+	<FORM METHOD="POST" ACTION="edit.php">
+
+
+
+	      <TR>
+
+		<TD align=right>First Name</TD>
+
+		    <TD><INPUT NAME="fname" SIZE="50" value="<?php echo $fname;?>"></TD></TR>
+
+		    	       <TR>
+
+				<TD align=right>Last Name</TD>
+
+				    <TD><INPUT NAME="lname" SIZE="50" value="<?php echo $lname;?>"></TD></TR>
+
+
+				    	       <TR>
+
+						<TD align=right>Cell Phone</TD>
+
+						    <TD><INPUT NAME="cellPhone" SIZE="20" value="<?php echo $cellPhone;?>"></TD></TR>
+						    	       
+								
+									<TR>
+
+										<TD align=right>Home Phone</TD>
+
+										    <TD><INPUT NAME="homePhone" SIZE="20" value="<?php echo $homePhone;?>"></TD></TR>
+										    	       
+
+												<TR>
+
+													<TD align=right>E-mail</TD>
+
+													    <TD><INPUT NAME="email" SIZE="50" value="<?php echo $email;?>">
+
+													    	       </TD>
+
+															</TR>
+
+															 <TR>
+
+															  <TD align=right><FONT COLOR="#FF0000">NOTE:</FONT></TD>
+
+															      <TD>E-mail address is required for a response.</TD>
+
+															      		 </TR>
+
+																	  <tr>
+
+																	   <td colspan=2 align=center>
+																	       
+																	        <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
+
+																		       <INPUT TYPE="SUBMIT" VALUE="Submit" ALIGN="MIDDLE"><INPUT TYPE="RESET" NAME="reset" VALUE="Clear all fields" ALIGN="MIDDLE">
+
+
+
+																		       	      </FORM>
+
+																			      </table>
+<?php
+include "footer.php";
+?>

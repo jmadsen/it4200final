@@ -1,0 +1,140 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #ccc;
+    position: relative;
+}
+
+#main {
+    width: 633px;
+    margin: 10px auto;
+    background: #fff;
+    position: relative;
+    border: #888 1px solid;
+}
+
+#header {
+    width: 638px;
+    height: 70px;
+    padding: 15px 20px;
+    /*border: #999 2px solid;*/
+    border-bottom: 0px;
+    margin: 0px auto;
+    position: relative;
+}
+
+#deleteupload {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+h1 {
+    color: #ccc;
+
+}
+
+/*form { margin: 10px;}*/
+form p {margin: 0 0 10px 0;}
+p {margin: 10px;}
+
+.gallery {
+    overflow: hidden;
+    height: 125px;
+    width: 125px;
+    float: left;
+    border: 1px #fff solid;
+    position: relative;
+}
+
+.x{position:absolute; top:-20px; right:5px; display:block; background:url(images/controls2.png) bottom center no-repeat; width:38px; height:19px; text-indent:-9999px;}
+.x.hover{background-position:bottom center;}
+
+#imageContainer {
+    position: relative;
+    margin: 0px auto;
+    width: 635px;
+}
+
+fieldset {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #BFBAB0;
+    background-color: #F2EFE9;
+    /*background-image: url(images/fieldset_gradient.jpg);*/
+    /*background-repeat: repeat-x;*/
+}
+
+fieldset ol {
+    padding: 1em 1em 0 1em;
+    list-style: none;
+}
+
+fieldset li {
+    float: left;
+    clear: left;
+    width: 100%;
+    padding-bottom: 1em;
+    color: #333;
+}
+
+input.submit {
+    float: none;
+    margin: auto;
+    /*border-style: none;*/
+    /*padding-left: 12em;*/
+    /*background-color: transparent;*/
+    /*background-image: none;*/
+}
+
+legend {
+    margin-left: 1em;
+    padding: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+label {
+    float: left;
+    width: 10em;
+    margin-right: 1em;
+    /*text-align: right;*/
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a img {
+	border: none; 
+}
+
+a:visited {
+	text-decoration: none;
+	color:#999;
+}
+
+a:active {
+	text-decoration: none;
+	color:#ccc;
+}
+
+a:hover {
+	text-decoration: none;
+	color:#fff;
+}
+
+a {
+    text-decoration: none;
+	color:#ccc;
+    padding: 10px;
+}
+
+#adminlogin {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}

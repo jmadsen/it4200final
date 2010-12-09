@@ -1,0 +1,121 @@
+<?php
+include("header.php");
+include("consdb.php");
+include("sec.php");
+
+session_start();
+
+if(isset($_SESSION['logged_in']))
+{
+	echo "Welcome ".$_SESSION['uname']."<br \><a href='logout.php'>Logout</a>";
+
+}
+
+
+db_connect();
+
+
+
+$query=mysql_query("select * from teammembers order by id") or die ("invalid query");
+
+//This is pulling out the information from the registration database and //assigning it to the variable $query
+
+?>
+<br \>
+<?php
+
+
+echo "<div id='box'>
+<div class='sqlHead'>
+<span class='id1'>ID</span>
+<span class='fname'>First Name</span>
+<span class='lname'>Last Name</span>
+<span class='attending'>Number Attending</span>
+<span class='email'>Email</span>
+<div id='clear'></div> </div>\n";
+
+
+$rows = 0;
+
+while($row=mysql_fetch_array($query)){
+echo "<div class='" . ($rows%2 == 0 ? "row1": "row2");$rows++;
+echo "'><span class='id1 editText'>$row[id]</span>
+<span id='fname' class='fname editText'>$row[fName]</span>
+<span id='fname' class='lname editText'>$row[lName]</span>
+<span class='attending'>$row[attending]</span>
+<span class='email'>$row[email]</span>
+<span class='deleteRow'><form action=delete.php method=post>
+<input type=hidden name=delete value=$row[RegistrationID]>
+<input type =submit value=Delete></form></span>
+<span class='addRow'><form action=regis.php method=post>
+<input type =submit value=Add></form></span>
+<span class='editRow'><form action=update.php method=post>
+<input type=hidden name=id value=$row[RegistrationID]>
+<input type =submit value=Edit></form></span>
+
+
+<script type='text/javascript'>
+setVarsForm('pageID=profileEdit&userID=');  
+</script>
+
+<div id='clear'></div> </div>\n";
+
+
+
+
+
+}
+
+echo " </div>";
+
+
+/*echo "<table class=opaque1  width=100% cellspacing=0 border=0 cellpadding=3>
+<tr bgcolor=#024673>
+<td>ID</td>
+<td>First Name</td>
+<td>Last Name</td>
+<td>Upline</td>
+<td>Number Attending</td>
+<td>Email</td>
+</tr>";
+
+$rowColor = "ffffff";
+
+while($row=mysql_fetch_array($query)){
+
+
+//This converts the computer time into human time
+
+if ($rowColor == "ffffff")
+
+   {
+
+	$rowColor = "3891CC";
+
+	}
+
+	else
+
+	{
+
+		$rowColor = "ffffff";
+
+		}
+
+echo "<tr bgcolor=#$rowColor><td>$row[id]</td><td>$row[fname]</td><td>$row[lname]</td>
+<td>$row[upline]</td>
+<td>$row[attending]</td>
+<td>$row[email]</td>
+}
+
+//This while loop goes through every row in query
+
+
+
+echo "</table>";
+
+*/
+
+include("footer.php");
+
+?>
